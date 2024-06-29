@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Advanced YouTube Video Processor",
+    "version": "1.1",
+    "description": "Process YouTube videos with advanced features",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "yoo.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://www.youtube.com/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "css": [
+                "content.css"
+            ]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    }
+}
